@@ -1,0 +1,189 @@
+@import url('https://fonts.font.im/css?family=Poppins');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #4a98f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100vw;
+  max-width: 1050px;
+  padding: 10px;
+  display: flex;
+  gap: 10px
+}
+
+
+/* SECTIONS */
+
+.container section {
+  border-radius: 7px;
+  background-color: #fff;
+}
+
+.container section.tools-board {
+  width: 210px;
+  padding: 15px 22px 0 22px;
+}
+
+.container section.drawing-board {
+  flex: 1;
+}
+
+
+/* TOOLS BOARD */
+
+.tools-row {
+  margin-bottom: 20px;
+}
+
+.tools-row ul.options {
+  list-style: none;
+  margin: 10px 0 0 5px;
+}
+
+.tools-row ul.options li.option {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.tools-row ul.options li.option:hover,
+.tools-row ul.options li.option.active {
+  filter: invert(17%) sepia(90%) saturate(3000%) hue-rotate(900deg) brightness(100%) contrast(100%);
+}
+
+.tools-row ul.options li.option span,
+.tools-row ul.options li.option label {
+  padding-left: 10px;
+  color: #5a6168;
+}
+
+.tools-row ul.options li.option:hover span,
+.tools-row ul.options li.option.active span,
+.tools-row ul.options li.option:hover label,
+.tools-row ul.options li.option.active label {
+  color: #4a98f7;
+}
+
+.tools-row ul.options li.option input#fill-color {
+  height: 14px;
+  width: 14px;
+  cursor: pointer;
+}
+
+.tools-row ul.options li.option input#fill-color~label {
+  cursor: pointer;
+}
+
+.tools-row ul.options li.option input#fill-color:checked~label {
+  color: #4a98f7;
+}
+
+.tools-row ul.options li.option input#size-slider {
+  width: 100%;
+  height: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.color-tools ul.options {
+  display: flex;
+  justify-content: space-between;
+}
+
+.color-tools ul.options li.option {
+  position: relative;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  margin-top: 3px;
+}
+
+.color-tools ul.options li.option:nth-child(1) {
+  background-color: #fff;
+  border: 1px solid #bfbfbf;
+}
+
+.color-tools ul.options li.option:nth-child(2) {
+  background-color: #000;
+}
+
+.color-tools ul.options li.option:nth-child(3) {
+  background-color: #e02020;
+}
+
+.color-tools ul.options li.option:nth-child(4) {
+  background-color: #6dd400;
+}
+
+.color-tools ul.options li.option:nth-child(5) {
+  background-color: #4a98f7;
+}
+
+.color-tools ul.options li.option.selectd::before {
+  content: "";
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.color-tools ul.options li.option:nth-child(1).selectd::before {
+  border-color: #bbb;
+}
+
+.color-tools ul.options li.option #color-picker {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.button-tools button {
+  --button-color: #000;
+  width: 100%;
+  padding: 11px 0;
+  margin-bottom: 13px;
+  border-radius: 5px;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--button-color);
+  border: 1px solid var(--button-color);
+  transition: all 0.3s ease;
+}
+
+.button-tools button:hover {
+  color: #fff;
+  background-color: var(--button-color);
+}
+
+.button-tools #clear-canvas {
+  --button-color: #6c757d;
+}
+
+.button-tools #save-image {
+  --button-color: #4a98f7;
+}
+
+
+/* DRAWING BOARD */
+
+.container section.drawing-board canvas {
+  width: 100%;
+  height: 100%;
+}
