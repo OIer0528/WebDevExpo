@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Picker</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
+</head>
+
+<body>
+  <div id="app">
+    <div class="background" :style="{backgroundColor: color}"></div>
+    <div class="container">
+      <h1 class="title" :style="{color: color}">Color Picker</h1>
+      <div class="inputs">
+        <input v-model="color" type="text" id="input-text" readonly="" :style="{color: color}">
+        <input v-model="color" type="color" id="input-color" value="#4db7c5">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    Vue.createApp({
+      data() {
+        return {
+          color: '#ffb5a7',
+        }
+      },
+    }).mount('#app');
+  </script>
+</body>
+
+</html>
