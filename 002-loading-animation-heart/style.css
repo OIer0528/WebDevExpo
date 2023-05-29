@@ -6,8 +6,99 @@
 
 body {
   height: 100vh;
-  background-color: #000;
+  background-color: #333;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+ul {
+  position: relative;
+  display: flex;
+  height: 200px;
+}
+
+li {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  margin: 0 7px;
+  list-style-type: none;
+  animation: love 2.5s var(--love-delay) infinite;
+}
+
+@keyframes love {
+  30%,
+  50% {
+    height: var(--love-height);
+    transform: translateY(var(--love-translateY));
+  }
+  70%,
+  100% {
+    height: 20px;
+    transform: translateY(0);
+  }
+}
+
+li:nth-child(1) {
+  background-color: red;
+  --love-height: 60px;
+  --love-translateY: -30px;
+  --love-delay: 0s;
+}
+
+li:nth-child(2) {
+  background-color: darkturquoise;
+  --love-height: 125px;
+  --love-translateY: -60px;
+  --love-delay: 0.1s;
+}
+
+li:nth-child(3) {
+  background-color: darksalmon;
+  --love-height: 160px;
+  --love-translateY: -75px;
+  --love-delay: 0.2s;
+}
+
+li:nth-child(4) {
+  background-color: deeppink;
+  --love-height: 180px;
+  --love-translateY: -60px;
+  --love-delay: 0.3s;
+}
+
+li:nth-child(5) {
+  background-color: yellow;
+  --love-height: 200px;
+  --love-translateY: -45px;
+  --love-delay: 0.4s;
+}
+
+li:nth-child(6) {
+  background-color: deeppink;
+  --love-height: 180px;
+  --love-translateY: -60px;
+  --love-delay: 0.5s;
+}
+
+li:nth-child(7) {
+  background-color: darksalmon;
+  --love-height: 160px;
+  --love-translateY: -75px;
+  --love-delay: 0.6s;
+}
+
+li:nth-child(8) {
+  background-color: darkturquoise;
+  --love-height: 125px;
+  --love-translateY: -60px;
+  --love-delay: 0.7s;
+}
+
+li:nth-child(9) {
+  background-color: red;
+  --love-height: 60px;
+  --love-translateY: -30px;
+  --love-delay: 0.8s;
 }
